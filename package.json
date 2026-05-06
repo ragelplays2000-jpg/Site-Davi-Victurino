@@ -1,0 +1,9 @@
+{
+  "name": "fotos-victurino",
+  "version": "1.0.0",
+  "description": "Site profissional de fotografia — Davi Victurino",
+  "scripts": {
+    "update-gallery": "node scripts/generate-gallery.js",
+    "deploy": "node scripts/generate-gallery.js && git add . && git commit -m \"Atualiza galeria\" && git push origin main"
+  }
+}

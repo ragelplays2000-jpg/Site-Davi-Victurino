@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Esportes Victurino | Fotografia Esportiva e Eventos na Bahia</title>
+<title>Fotos Victurino | Fotografia Esportiva e Eventos na Bahia</title>
 <meta name="description" content="Fotógrafo profissional especializado em esportes, casamentos, aniversários e ensaios gestante. 7 anos de experiência, mais de 12 mil fotos capturadas em toda Bahia.">
 <meta name="keywords" content="fotógrafo esportivo, fotografia esportiva bahia, fotografo futebol, fotografo corrida, casamento bahia, ensaio gestante, fotografia corporativa, davi viturino">
 <meta name="author" content="Davi Viturino Pinheiro">
-<meta property="og:title" content="Esportes Victurino - Fotografia Esportiva Bahia">
+<meta property="og:title" content="Fotos Victurino - Fotografia Esportiva Bahia">
 <meta property="og:description" content="Capturando a emoção do esporte e eventos em toda Bahia. Mais de 420 jogos fotografados.">
 <meta property="og:image" content="assets/img/davi-perfil.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Esportes Victurino - Fotografia Esportiva">
+<meta name="twitter:title" content="Fotos Victurino - Fotografia Esportiva">
 <meta name="twitter:description" content="Fotografia esportiva e de eventos profissional na Bahia">
 <meta name="twitter:image" content="assets/img/davi-perfil.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -289,6 +289,31 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
   .filter-bar{gap:6px}
   .filter-btn{padding:7px 14px;font-size:.7rem}
 }
+
+/* ── PLATAFORMAS ── */
+#plataformas{padding:80px 0;background:var(--bg-gray)}
+.plataformas-header{text-align:center;margin-bottom:48px}
+.plataformas-header p{color:var(--text-gray);margin-top:12px;font-size:.95rem}
+.plataformas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
+.plat-card{display:flex;flex-direction:column;align-items:center;gap:14px;padding:32px 24px;background:#fff;border:2px solid #e0e0e0;border-radius:4px;text-decoration:none;color:var(--text-dark);transition:var(--transition);text-align:center}
+.plat-card:hover{border-color:var(--primary);background:var(--primary);color:#fff;transform:translateY(-4px);box-shadow:var(--shadow-strong)}
+.plat-icon{font-size:1.8rem}
+.plat-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px}
+.plat-sub{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:.6}
+.plat-card:hover .plat-sub{opacity:.85}
+@media(max-width:767px){.plataformas-grid{grid-template-columns:1fr;max-width:360px}}
+
+/* ── FILTER COUNTS ── */
+.filter-count{font-size:.65rem;opacity:.6;font-weight:600;margin-left:3px}
+
+/* ── VER MAIS ── */
+#ver-mais-wrap{text-align:center;margin-top:36px;display:none}
+.spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-left:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── PACOTES — 5 cards ── */
+@media(min-width:1200px){.pacotes-grid{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:768px) and (max-width:1199px){.pacotes-grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
@@ -296,7 +321,7 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
 <!-- HEADER -->
 <header id="header">
   <div class="header-inner">
-    <a href="#hero" class="logo">ESPORTES <span>VICTURINO</span></a>
+    <a href="#hero" class="logo">FOTOS <span>VICTURINO</span></a>
     <nav>
       <ul>
         <li><a href="#hero">Início</a></li>
@@ -439,6 +464,33 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
   </div>
 </section>
 
+<!-- PLATAFORMAS -->
+<section id="plataformas">
+  <div class="container">
+    <div class="plataformas-header">
+      <span class="section-title centered">PLATAFORMAS DE TRABALHO</span>
+      <p>Encontre meus trabalhos também em:</p>
+    </div>
+    <div class="plataformas-grid">
+      <a href="https://www.fotto.com.br/davivicturino_" target="_blank" rel="noopener noreferrer" class="plat-card">
+        <span class="plat-icon">🔗</span>
+        <span class="plat-name">Fotto</span>
+        <span class="plat-sub">fotto.com.br</span>
+      </a>
+      <a href="http://banlek.com/davivicturino_" target="_blank" rel="noopener noreferrer" class="plat-card">
+        <span class="plat-icon">🔗</span>
+        <span class="plat-name">Banlek</span>
+        <span class="plat-sub">banlek.com</span>
+      </a>
+      <a href="https://davivicturino.fotop.com/?_gl=1*1iyghho*_gcl_au*MTc2MDE1NzcwNy4xNzc2ODk1MzIzLjIwODc5NDYyNDguMTc3ODA4Mjc5MC4xNzc4MDgyNzg5" target="_blank" rel="noopener noreferrer" class="plat-card">
+        <span class="plat-icon">🔗</span>
+        <span class="plat-name">Fotop</span>
+        <span class="plat-sub">fotop.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- PORTFÓLIO -->
 <section id="portfolio">
   <div class="container">
@@ -447,16 +499,23 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
       <p style="color:var(--text-gray);margin-top:16px;font-size:.95rem">Momentos reais. Emoções verdadeiras.</p>
     </div>
     <div class="filter-bar" role="group" aria-label="Filtros de categoria">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="esportes-futebol">Futebol</button>
-      <button class="filter-btn" data-filter="esportes-corrida">Corrida</button>
-      <button class="filter-btn" data-filter="casamentos">Casamentos</button>
-      <button class="filter-btn" data-filter="aniversarios">Aniversários</button>
-      <button class="filter-btn" data-filter="gestante">Gestante</button>
-      <button class="filter-btn" data-filter="corporativo">Corporativo</button>
+      <button class="filter-btn active" data-filter="all"><span class="filter-name">Todos</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="esportes-futebol"><span class="filter-name">Futebol</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="esportes-corrida"><span class="filter-name">Corrida</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="casamentos"><span class="filter-name">Casamentos</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="aniversarios"><span class="filter-name">Aniversários</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="gestante"><span class="filter-name">Gestante</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="corporativo"><span class="filter-name">Corporativo</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="jiu-jitsu"><span class="filter-name">Jiu-Jitsu</span><span class="filter-count"></span></button>
     </div>
     <div class="masonry-grid" id="masonryGrid" role="list">
       <!-- Populated by JS -->
+    </div>
+    <div id="ver-mais-wrap">
+      <button id="ver-mais-btn" class="btn btn-primary">
+        <span id="ver-mais-text">Ver Mais</span>
+        <span id="ver-mais-spinner" class="spinner" style="display:none"></span>
+      </button>
     </div>
   </div>
 </section>
@@ -529,6 +588,20 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
           <li>Entrega em 7 dias</li>
         </ul>
         <a href="https://wa.me/5575982659115?text=Ol%C3%A1!%20Gostaria%20de%20contratar%20o%20Ensaio%20GESTANTE%20(R%24400).%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener" class="pkg-btn" aria-label="Contratar Ensaio Gestante">CONTRATAR</a>
+      </div>
+      <!-- ESPORTIVO -->
+      <div class="pkg-card gsap-fade-up">
+        <div class="pkg-icon" aria-hidden="true">🥋</div>
+        <div class="pkg-title">Esportivo</div>
+        <div class="pkg-price" style="font-size:1.6rem">A consultar</div>
+        <div class="pkg-price-note">orçamento sob demanda</div>
+        <div class="pkg-divider" aria-hidden="true"></div>
+        <ul class="pkg-features">
+          <li>Cobertura esportiva personalizada</li>
+          <li>Futebol, Jiu-Jitsu, MMA e mais</li>
+          <li>Orçamento sob demanda</li>
+        </ul>
+        <a href="https://wa.me/5575982659115?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20para%20cobertura%20ESPORTIVA." target="_blank" rel="noopener" class="pkg-btn" aria-label="Consultar Pacote Esportivo">CONSULTAR</a>
       </div>
     </div>
   </div>
@@ -645,7 +718,7 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
         </form>
       </div>
       <div class="contato-info-side">
-        <h3>Esportes Victurino</h3>
+        <h3>Fotos Victurino</h3>
         <p class="contato-tagline">Fotografia com paixão em toda a Bahia</p>
         <div class="info-items">
           <div class="info-item">
@@ -697,7 +770,7 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-logo">ESPORTES <span>VICTURINO</span></div>
+      <div class="footer-logo">FOTOS <span>VICTURINO</span></div>
       <div class="footer-social">
         <a href="https://instagram.com/esportes.victurno_" target="_blank" rel="noopener" aria-label="Instagram @esportes.victurno_">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -718,8 +791,8 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
       </nav>
       <div class="footer-divider" aria-hidden="true"></div>
       <div class="footer-bottom">
-        <p>© 2026 Esportes Victurino — Todos os direitos reservados</p>
-        <p class="footer-credit">Desenvolvido por <a href="#" target="_blank" rel="noopener">Rian Farias</a></p>
+        <p>© 2026 Fotos Victurino — Todos os direitos reservados</p>
+        <p class="footer-credit">Desenvolvido por <a href="https://portfolio-rian.ragelplays2000.workers.dev/" target="_blank" rel="noopener noreferrer">Rian.Dev</a></p>
       </div>
     </div>
   </div>
@@ -735,54 +808,192 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js" defer></script>
 <script>
-// ── GALLERY DATA ──
+// GALLERY DATA START
 const GALLERY = [
-  // Futebol — 6 selecionadas
-  ...[1,6,11,19,17,20].map((n,i)=>({src:`assets/img/esportes/futebol/futebol-${n}.jpg`,cat:'esportes-futebol',label:'Futebol',tall:i%3===0})),
-  // Corrida — 7 disponíveis → 6
-  ...Array.from({length:6},(_,i)=>({src:`assets/img/esportes/corrida/corrida-${i+1}.jpg`,cat:'esportes-corrida',label:'Corrida',tall:i%2===0})),
-  // Casamentos — 3 disponíveis → 3
-  ...Array.from({length:3},(_,i)=>({src:`assets/img/casamentos/casamentos-${i+1}.jpg`,cat:'casamentos',label:'Casamento',tall:true})),
-  // Aniversários — 6 disponíveis → 6
-  ...Array.from({length:6},(_,i)=>({src:`assets/img/aniversarios/aniversarios-${i+1}.jpg`,cat:'aniversarios',label:'Aniversário',tall:i%2===0})),
-  // Gestante — 10 disponíveis → 6
-  ...Array.from({length:6},(_,i)=>({src:`assets/img/gestante/gestante-${i+1}.jpg`,cat:'gestante',label:'Gestante',tall:true})),
-  // Corporativo — 3 disponíveis → 3
-  ...Array.from({length:3},(_,i)=>({src:`assets/img/corporativo/corporativo-${i+1}.jpg`,cat:'corporativo',label:'Corporativo',tall:false})),
+  // Futebol — 20 foto(s)
+    {src:'assets/img/esportes/futebol/futebol-1.jpg',cat:'esportes-futebol',label:'Futebol',tall:true},
+    {src:'assets/img/esportes/futebol/futebol-10.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-11.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-12.jpg',cat:'esportes-futebol',label:'Futebol',tall:true},
+    {src:'assets/img/esportes/futebol/futebol-13.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-14.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-15.jpg',cat:'esportes-futebol',label:'Futebol',tall:true},
+    {src:'assets/img/esportes/futebol/futebol-16.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-17.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-18.jpg',cat:'esportes-futebol',label:'Futebol',tall:true},
+    {src:'assets/img/esportes/futebol/futebol-19.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-2.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-20.jpg',cat:'esportes-futebol',label:'Futebol',tall:true},
+    {src:'assets/img/esportes/futebol/futebol-3.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-4.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-5.jpg',cat:'esportes-futebol',label:'Futebol',tall:true},
+    {src:'assets/img/esportes/futebol/futebol-6.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-7.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+    {src:'assets/img/esportes/futebol/futebol-8.jpg',cat:'esportes-futebol',label:'Futebol',tall:true},
+    {src:'assets/img/esportes/futebol/futebol-9.jpg',cat:'esportes-futebol',label:'Futebol',tall:false},
+  // Corrida — 7 foto(s)
+    {src:'assets/img/esportes/corrida/corrida-1.jpg',cat:'esportes-corrida',label:'Corrida',tall:true},
+    {src:'assets/img/esportes/corrida/corrida-2.jpg',cat:'esportes-corrida',label:'Corrida',tall:false},
+    {src:'assets/img/esportes/corrida/corrida-3.jpg',cat:'esportes-corrida',label:'Corrida',tall:true},
+    {src:'assets/img/esportes/corrida/corrida-4.jpg',cat:'esportes-corrida',label:'Corrida',tall:false},
+    {src:'assets/img/esportes/corrida/corrida-5.jpg',cat:'esportes-corrida',label:'Corrida',tall:true},
+    {src:'assets/img/esportes/corrida/corrida-6.jpg',cat:'esportes-corrida',label:'Corrida',tall:false},
+    {src:'assets/img/esportes/corrida/corrida-7.jpg',cat:'esportes-corrida',label:'Corrida',tall:true},
+  // Casamento — 3 foto(s)
+    {src:'assets/img/casamentos/casamentos-1.jpg',cat:'casamentos',label:'Casamento',tall:true},
+    {src:'assets/img/casamentos/casamentos-2.jpg',cat:'casamentos',label:'Casamento',tall:true},
+    {src:'assets/img/casamentos/casamentos-3.jpg',cat:'casamentos',label:'Casamento',tall:true},
+  // Aniversário — 6 foto(s)
+    {src:'assets/img/aniversarios/aniversarios-1.jpg',cat:'aniversarios',label:'Aniversário',tall:true},
+    {src:'assets/img/aniversarios/aniversarios-2.jpg',cat:'aniversarios',label:'Aniversário',tall:false},
+    {src:'assets/img/aniversarios/aniversarios-3.jpg',cat:'aniversarios',label:'Aniversário',tall:true},
+    {src:'assets/img/aniversarios/aniversarios-4.jpg',cat:'aniversarios',label:'Aniversário',tall:false},
+    {src:'assets/img/aniversarios/aniversarios-5.jpg',cat:'aniversarios',label:'Aniversário',tall:true},
+    {src:'assets/img/aniversarios/aniversarios-6.jpg',cat:'aniversarios',label:'Aniversário',tall:false},
+  // Gestante — 10 foto(s)
+    {src:'assets/img/gestante/gestante-1.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-10.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-2.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-3.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-4.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-5.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-6.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-7.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-8.jpg',cat:'gestante',label:'Gestante',tall:true},
+    {src:'assets/img/gestante/gestante-9.jpg',cat:'gestante',label:'Gestante',tall:true},
+  // Corporativo — 3 foto(s)
+    {src:'assets/img/corporativo/corporativo-1.jpg',cat:'corporativo',label:'Corporativo',tall:false},
+    {src:'assets/img/corporativo/corporativo-2.jpg',cat:'corporativo',label:'Corporativo',tall:false},
+    {src:'assets/img/corporativo/corporativo-3.jpg',cat:'corporativo',label:'Corporativo',tall:false},
+  // Jiu-Jitsu — placeholders (TODO: substituir por fotos reais em assets/img/jiu-jitsu/)
+    {src:'https://picsum.photos/800/600?random=101',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
+    {src:'https://picsum.photos/800/600?random=102',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
+    {src:'https://picsum.photos/800/600?random=103',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
+    {src:'https://picsum.photos/800/600?random=104',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
+    {src:'https://picsum.photos/800/600?random=105',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
+    {src:'https://picsum.photos/800/600?random=106',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
+    {src:'https://picsum.photos/800/600?random=107',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
+    {src:'https://picsum.photos/800/600?random=108',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
 ];
+// GALLERY DATA END
+
+const TODOS_LIMIT = 3;
+const CATEGORY_LIMIT = 6;
+let currentFilter = 'all';
+let verMaisAberto = false;
+
+// ── CONTADORES ──
+function getCounts() {
+  const counts = {all: GALLERY.length};
+  GALLERY.forEach(p => { counts[p.cat] = (counts[p.cat]||0) + 1; });
+  return counts;
+}
+
+function initCounters() {
+  const counts = getCounts();
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const f = btn.dataset.filter;
+    const n = f==='all' ? counts.all : (counts[f]||0);
+    const el = btn.querySelector('.filter-count');
+    if(el) el.textContent = `(${n})`;
+  });
+}
+
+// ── ITENS DO FILTRO "TODOS" (3 por categoria) ──
+function getTodosItems() {
+  const bycat = {};
+  GALLERY.forEach(p => { (bycat[p.cat]=bycat[p.cat]||[]).push(p); });
+  return Object.values(bycat).flatMap(arr => arr.slice(0, TODOS_LIMIT));
+}
+
+// ── HTML DE UM ITEM ──
+function itemHTML(p) {
+  return `<div class="masonry-item glightbox-item" data-category="${p.cat}" style="aspect-ratio:${p.tall?'3/4':'4/3'}" role="listitem">
+    <a href="${p.src}" class="glightbox" data-gallery="${p.cat}" data-description="${p.label} — Fotos Victurino" aria-label="Ver foto de ${p.label}" style="display:block;width:100%;height:100%">
+      <img src="${p.src}" alt="Fotografia ${p.label} - Fotos Victurino" loading="lazy" onerror="this.closest('.masonry-item').style.display='none'">
+      <div class="overlay" aria-hidden="true">
+        <div class="overlay-icon">🔍</div>
+        <span class="overlay-cat">${p.label}</span>
+      </div>
+    </a>
+  </div>`;
+}
+
+// ── ANIMAÇÃO GSAP ──
+function fadeIn(els) {
+  if(window.gsap) {
+    gsap.fromTo(els,{opacity:0,y:20},{opacity:1,y:0,duration:.6,stagger:.08,ease:'power2.out'});
+  } else {
+    Array.from(els).forEach((el,i) => {
+      el.style.opacity='0'; el.style.transform='translateY(20px)';
+      el.style.transition='opacity .4s ease, transform .4s ease';
+      setTimeout(()=>{ el.style.opacity='1'; el.style.transform='translateY(0)'; }, i*50);
+    });
+  }
+}
+
+// ── VER MAIS ──
+function updateVerMais(shown, total) {
+  const wrap = document.getElementById('ver-mais-wrap');
+  const textEl = document.getElementById('ver-mais-text');
+  if(currentFilter==='all' || shown>=total) { wrap.style.display='none'; return; }
+  wrap.style.display='block';
+  textEl.textContent = verMaisAberto ? 'Ver Menos' : `Ver Mais (${total-shown} fotos)`;
+}
 
 // ── BUILD GALLERY ──
-function buildGallery(filter='all'){
+function buildGallery(filter='all', showAll=false) {
+  currentFilter = filter;
+  verMaisAberto = showAll;
   const grid = document.getElementById('masonryGrid');
-  const items = filter==='all' ? GALLERY : GALLERY.filter(p=>p.cat===filter);
-  grid.innerHTML = items.map((p,i)=>`
-    <div class="masonry-item glightbox-item" data-category="${p.cat}" style="opacity:0;transform:translateY(20px);aspect-ratio:${p.tall?'3/4':'4/3'}" role="listitem">
-      <a href="${p.src}" class="glightbox" data-gallery="${p.cat}" data-description="${p.label} — Esportes Victurino" aria-label="Ver foto de ${p.label}" style="display:block;width:100%;height:100%">
-        <img src="${p.src}" alt="Fotografia ${p.label} - Esportes Victurino" loading="lazy" onerror="this.closest('.masonry-item').style.display='none'">
-        <div class="overlay" aria-hidden="true">
-          <div class="overlay-icon">🔍</div>
-          <span class="overlay-cat">${p.label}</span>
-        </div>
-      </a>
-    </div>
-  `).join('');
-
-  // Stagger fade in
-  const els = grid.querySelectorAll('.masonry-item');
-  els.forEach((el,i)=>{
-    setTimeout(()=>{
-      el.style.transition='opacity .4s ease, transform .4s ease';
-      el.style.opacity='1';
-      el.style.transform='translateY(0)';
-    }, i*40);
-  });
-
-  // Init lightbox
+  const allCat = filter==='all' ? getTodosItems() : GALLERY.filter(p=>p.cat===filter);
+  const items = (filter!=='all' && !showAll) ? allCat.slice(0, CATEGORY_LIMIT) : allCat;
+  grid.innerHTML = items.map(itemHTML).join('');
+  fadeIn(grid.querySelectorAll('.masonry-item'));
+  updateVerMais(items.length, allCat.length);
   if(window.GLightbox){
     if(window._lb) window._lb.destroy();
     window._lb = GLightbox({selector:'.glightbox',touchNavigation:true,loop:true,autoplayVideos:false});
   }
 }
+
+// ── BOTÃO VER MAIS ──
+document.getElementById('ver-mais-btn').addEventListener('click', () => {
+  if(verMaisAberto) {
+    buildGallery(currentFilter, false);
+    window.scrollTo({top: document.getElementById('portfolio').offsetTop-80, behavior:'smooth'});
+    return;
+  }
+  const btn = document.getElementById('ver-mais-btn');
+  const spinner = document.getElementById('ver-mais-spinner');
+  const textEl = document.getElementById('ver-mais-text');
+  btn.disabled = true;
+  textEl.style.display = 'none';
+  spinner.style.display = 'inline-block';
+  setTimeout(() => {
+    const grid = document.getElementById('masonryGrid');
+    const allCat = GALLERY.filter(p=>p.cat===currentFilter);
+    const currentShown = grid.querySelectorAll('.masonry-item').length;
+    const newItems = allCat.slice(currentShown);
+    newItems.forEach(p => {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = itemHTML(p);
+      grid.appendChild(tmp.firstElementChild);
+    });
+    const newEls = Array.from(grid.querySelectorAll('.masonry-item')).slice(currentShown);
+    fadeIn(newEls);
+    verMaisAberto = true;
+    btn.disabled = false;
+    spinner.style.display = 'none';
+    textEl.style.display = 'inline';
+    textEl.textContent = 'Ver Menos';
+    updateVerMais(allCat.length, allCat.length);
+    if(window.GLightbox){
+      if(window._lb) window._lb.destroy();
+      window._lb = GLightbox({selector:'.glightbox',touchNavigation:true,loop:true,autoplayVideos:false});
+    }
+  }, 500);
+});
 
 // ── FILTERS ──
 document.querySelectorAll('.filter-btn').forEach(btn=>{
@@ -794,9 +1005,8 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
     grid.style.opacity='0';
     grid.style.transition='opacity .2s ease';
     setTimeout(()=>{
-      buildGallery(f);
+      buildGallery(f, false);
       grid.style.opacity='1';
-      // Update URL
       const url = new URL(location.href);
       f==='all' ? url.searchParams.delete('categoria') : url.searchParams.set('categoria',f);
       history.replaceState(null,'',url);
@@ -808,21 +1018,8 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileOverlay = document.getElementById('mobileOverlay');
-
-function openMenu(){
-  hamburger.classList.add('active');
-  mobileMenu.classList.add('active');
-  mobileOverlay.classList.add('active');
-  hamburger.setAttribute('aria-expanded','true');
-  document.body.style.overflow='hidden';
-}
-function closeMenu(){
-  hamburger.classList.remove('active');
-  mobileMenu.classList.remove('active');
-  mobileOverlay.classList.remove('active');
-  hamburger.setAttribute('aria-expanded','false');
-  document.body.style.overflow='';
-}
+function openMenu(){hamburger.classList.add('active');mobileMenu.classList.add('active');mobileOverlay.classList.add('active');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+function closeMenu(){hamburger.classList.remove('active');mobileMenu.classList.remove('active');mobileOverlay.classList.remove('active');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
 hamburger.addEventListener('click',()=>mobileMenu.classList.contains('active')?closeMenu():openMenu());
 mobileOverlay.addEventListener('click',closeMenu);
 document.querySelectorAll('.mobile-nav-link').forEach(l=>l.addEventListener('click',closeMenu));
@@ -830,94 +1027,55 @@ document.querySelectorAll('.mobile-nav-link').forEach(l=>l.addEventListener('cli
 // ── HEADER HIDE/SHOW ──
 let lastScroll=0, headerEl=document.getElementById('header');
 window.addEventListener('scroll',()=>{
-  const curr = window.scrollY;
+  const curr=window.scrollY;
   if(curr>80) headerEl.classList.add('scrolled'); else headerEl.classList.remove('scrolled');
-  if(curr>lastScroll && curr>200) headerEl.classList.add('hidden');
-  else headerEl.classList.remove('hidden');
-  lastScroll = curr;
+  if(curr>lastScroll&&curr>200) headerEl.classList.add('hidden'); else headerEl.classList.remove('hidden');
+  lastScroll=curr;
 },{passive:true});
 
 // ── CONTACT FORM → WHATSAPP ──
 document.getElementById('contactForm').addEventListener('submit',e=>{
   e.preventDefault();
-  const nome = document.getElementById('nome').value.trim();
-  const wa   = document.getElementById('whatsapp').value.trim();
-  const ev   = document.getElementById('evento').value;
-  const msg  = document.getElementById('mensagem').value.trim();
-  if(!nome||!wa||!ev){
-    alert('Por favor, preencha os campos obrigatórios.');
-    return;
-  }
-  const text = `Olá Davi! Meu nome é ${nome}, WhatsApp ${wa}. Gostaria de informações sobre ${ev}.${msg?' Mensagem: '+msg:''}`;
+  const nome=document.getElementById('nome').value.trim();
+  const wa=document.getElementById('whatsapp').value.trim();
+  const ev=document.getElementById('evento').value;
+  const msg=document.getElementById('mensagem').value.trim();
+  if(!nome||!wa||!ev){alert('Por favor, preencha os campos obrigatórios.');return;}
+  const text=`Olá Davi! Meu nome é ${nome}, WhatsApp ${wa}. Gostaria de informações sobre ${ev}.${msg?' Mensagem: '+msg:''}`;
   window.open(`https://wa.me/5575982659115?text=${encodeURIComponent(text)}`,'_blank','noopener');
 });
 
 // ── COUNT UP ──
 function countUp(el){
-  const target = +el.dataset.target;
-  const dur = 2000;
-  const step = target/dur*16;
-  let cur = 0;
-  const tick=()=>{
-    cur = Math.min(cur+step, target);
-    el.textContent = cur>=1000 ? Math.round(cur).toLocaleString('pt-BR') : Math.round(cur);
-    if(cur<target) requestAnimationFrame(tick);
-  };
+  const target=+el.dataset.target,dur=2000,step=target/dur*16;
+  let cur=0;
+  const tick=()=>{cur=Math.min(cur+step,target);el.textContent=cur>=1000?Math.round(cur).toLocaleString('pt-BR'):Math.round(cur);if(cur<target)requestAnimationFrame(tick);};
   tick();
 }
 
-// ── GSAP + SCROLLTRIGGER ──
+// ── INIT ──
 window.addEventListener('load',()=>{
+  initCounters();
   buildGallery();
-  if(!window.gsap){
-    document.getElementById('hero').classList.add('gsap-fallback');
-    document.body.classList.add('no-gsap');
-    return;
-  }
+  if(!window.gsap){document.getElementById('hero').classList.add('gsap-fallback');document.body.classList.add('no-gsap');return;}
 
-  // Restore filter from URL
-  const urlCat = new URLSearchParams(location.search).get('categoria');
+  const urlCat=new URLSearchParams(location.search).get('categoria');
   if(urlCat){
-    const btn = document.querySelector(`.filter-btn[data-filter="${urlCat}"]`);
-    if(btn){
-      document.querySelector('.filter-btn.active').classList.remove('active');
-      btn.classList.add('active');
-      buildGallery(urlCat);
-    }
+    const btn=document.querySelector(`.filter-btn[data-filter="${urlCat}"]`);
+    if(btn){document.querySelector('.filter-btn.active').classList.remove('active');btn.classList.add('active');buildGallery(urlCat,false);}
   }
-
-  if(!window.gsap) return;
 
   gsap.registerPlugin(ScrollTrigger);
-
-  // Hero entrance
   gsap.to('.hero-title',{opacity:1,y:0,duration:.9,delay:.3,ease:'power3.out'});
   gsap.to('.hero-subtitle',{opacity:1,y:0,duration:.9,delay:.55,ease:'power3.out'});
   gsap.to('.hero-cta',{opacity:1,y:0,duration:.9,delay:.75,ease:'power3.out'});
   gsap.to('.stat-card',{opacity:1,y:0,duration:.7,delay:1,stagger:.15,ease:'power2.out'});
-
-  // Hero parallax
   gsap.to('#heroBg',{yPercent:25,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
-
-  // Stats count-up
-  ScrollTrigger.create({
-    trigger:'.hero-stats',start:'top 90%',once:true,
-    onEnter:()=>document.querySelectorAll('.count').forEach(countUp)
-  });
-
-  // Sobre
-  gsap.fromTo('.gsap-slide-left',{x:-60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',
-    scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
-  gsap.fromTo('.gsap-slide-right',{x:60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',
-    scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
-
-  // Packages stagger
-  gsap.to('.gsap-fade-up',{y:0,opacity:1,duration:.8,stagger:.12,ease:'power2.out',
-    scrollTrigger:{trigger:'#pacotes',start:'top 80%',once:true}});
-
-  // Footer
-  gsap.from('footer',{opacity:0,y:30,duration:1,ease:'power2.out',
-    scrollTrigger:{trigger:'footer',start:'top 90%'}});
+  ScrollTrigger.create({trigger:'.hero-stats',start:'top 90%',once:true,onEnter:()=>document.querySelectorAll('.count').forEach(countUp)});
+  gsap.fromTo('.gsap-slide-left',{x:-60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
+  gsap.fromTo('.gsap-slide-right',{x:60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
+  gsap.to('.gsap-fade-up',{y:0,opacity:1,duration:.8,stagger:.12,ease:'power2.out',scrollTrigger:{trigger:'#pacotes',start:'top 80%',once:true}});
+  gsap.from('footer',{opacity:0,y:30,duration:1,ease:'power2.out',scrollTrigger:{trigger:'footer',start:'top 90%'}});
 });
 </script>
 </body>
