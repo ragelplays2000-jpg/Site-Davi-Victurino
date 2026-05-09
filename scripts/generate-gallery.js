@@ -8,7 +8,12 @@ const CATEGORIES = [
   { key: 'aniversarios',     dir: 'aniversarios',      label: 'Aniversário', tall: (i) => i % 2 === 0,  placeholders: 0 },
   { key: 'gestante',         dir: 'gestante',          label: 'Gestante',    tall: ()  => true,         placeholders: 0 },
   { key: 'corporativo',      dir: 'corporativo',       label: 'Corporativo', tall: ()  => false,        placeholders: 0 },
-  { key: 'jiu-jitsu',        dir: 'jiu-jitsu',         label: 'Jiu-Jitsu',  tall: (i) => i % 2 === 0,  placeholders: 8 },
+  { key: 'jiu-jitsu',        dir: 'jiu-jitsu',         label: 'Jiu-Jitsu',  tall: (i) => i % 2 === 0,  placeholders: 0 },
+  { key: 'eventos',          dir: 'eventos',            label: 'Eventos',     tall: (i) => i % 2 === 0,  placeholders: 0 },
+  { key: 'ciclismo',         dir: 'ciclismo',           label: 'Ciclismo',    tall: (i) => i % 3 === 0,  placeholders: 0 },
+  { key: 'alimentos',        dir: 'alimentos',          label: 'Alimentos',   tall: ()  => false,        placeholders: 0 },
+  { key: 'shows',            dir: 'shows',              label: 'Shows',       tall: (i) => i % 2 === 0,  placeholders: 0 },
+  { key: 'premiacao',        dir: 'premiacao',          label: 'Premiação',   tall: (i) => i % 3 === 0,  placeholders: 0 },
 ];
 
 const IMG_BASE   = path.join(__dirname, '..', 'assets', 'img');

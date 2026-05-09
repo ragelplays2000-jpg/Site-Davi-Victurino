@@ -159,7 +159,7 @@ nav ul a:hover::after{width:100%}
 #pacotes{padding:100px 0;background:var(--bg-gray)}
 .pacotes-header{text-align:center;margin-bottom:56px}
 .pacotes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.pkg-card{background:#fff;padding:36px 28px;position:relative;transition:var(--transition);border-bottom:3px solid transparent;border-radius:2px;opacity:0;transform:translateY(40px)}
+.pkg-card{background:#fff;padding:36px 28px;position:relative;transition:var(--transition);border-bottom:3px solid transparent;border-radius:2px}
 .pkg-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-strong);border-bottom-color:var(--primary)}
 .pkg-card.featured{border-bottom-color:var(--primary)}
 .pkg-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;white-space:nowrap}
@@ -507,6 +507,11 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
       <button class="filter-btn" data-filter="gestante"><span class="filter-name">Gestante</span><span class="filter-count"></span></button>
       <button class="filter-btn" data-filter="corporativo"><span class="filter-name">Corporativo</span><span class="filter-count"></span></button>
       <button class="filter-btn" data-filter="jiu-jitsu"><span class="filter-name">Jiu-Jitsu</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="eventos"><span class="filter-name">Eventos</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="ciclismo"><span class="filter-name">Ciclismo</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="alimentos"><span class="filter-name">Alimentos</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="shows"><span class="filter-name">Shows</span><span class="filter-count"></span></button>
+      <button class="filter-btn" data-filter="premiacao"><span class="filter-name">Premiação</span><span class="filter-count"></span></button>
     </div>
     <div class="masonry-grid" id="masonryGrid" role="list">
       <!-- Populated by JS -->
@@ -865,19 +870,16 @@ const GALLERY = [
     {src:'assets/img/corporativo/corporativo-1.jpg',cat:'corporativo',label:'Corporativo',tall:false},
     {src:'assets/img/corporativo/corporativo-2.jpg',cat:'corporativo',label:'Corporativo',tall:false},
     {src:'assets/img/corporativo/corporativo-3.jpg',cat:'corporativo',label:'Corporativo',tall:false},
-  // Jiu-Jitsu — placeholders (TODO: substituir por fotos reais em assets/img/jiu-jitsu/)
-    {src:'https://picsum.photos/800/600?random=101',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
-    {src:'https://picsum.photos/800/600?random=102',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
-    {src:'https://picsum.photos/800/600?random=103',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
-    {src:'https://picsum.photos/800/600?random=104',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
-    {src:'https://picsum.photos/800/600?random=105',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
-    {src:'https://picsum.photos/800/600?random=106',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
-    {src:'https://picsum.photos/800/600?random=107',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
-    {src:'https://picsum.photos/800/600?random=108',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
+  // Jiu-Jitsu — sem fotos ainda,
+  // Eventos — sem fotos ainda,
+  // Ciclismo — sem fotos ainda,
+  // Alimentos — sem fotos ainda,
+  // Shows — sem fotos ainda,
+  // Premiação — sem fotos ainda,
 ];
 // GALLERY DATA END
 
-const TODOS_LIMIT = 3;
+const TODOS_LIMIT = 1;
 const CATEGORY_LIMIT = 6;
 let currentFilter = 'all';
 let verMaisAberto = false;
@@ -895,7 +897,8 @@ function initCounters() {
     const f = btn.dataset.filter;
     const n = f==='all' ? counts.all : (counts[f]||0);
     const el = btn.querySelector('.filter-count');
-    if(el) el.textContent = `(${n})`;
+    if(el) el.textContent = n > 0 ? `(${n})` : '';
+    if(f !== 'all' && n === 0) btn.style.display = 'none';
   });
 }
 
@@ -1074,7 +1077,7 @@ window.addEventListener('load',()=>{
   ScrollTrigger.create({trigger:'.hero-stats',start:'top 90%',once:true,onEnter:()=>document.querySelectorAll('.count').forEach(countUp)});
   gsap.fromTo('.gsap-slide-left',{x:-60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
   gsap.fromTo('.gsap-slide-right',{x:60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
-  gsap.to('.gsap-fade-up',{y:0,opacity:1,duration:.8,stagger:.12,ease:'power2.out',scrollTrigger:{trigger:'#pacotes',start:'top 80%',once:true}});
+  gsap.from('.gsap-fade-up',{y:40,opacity:0,duration:.8,stagger:.12,ease:'power2.out',scrollTrigger:{trigger:'#pacotes',start:'top 80%',once:true}});
   gsap.from('footer',{opacity:0,y:30,duration:1,ease:'power2.out',scrollTrigger:{trigger:'footer',start:'top 90%'}});
 });
 </script>

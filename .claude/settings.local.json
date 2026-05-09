@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/generate-gallery.js)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "PowerShell(ls \"C:\\\\Users\\\\rianf\\\\Downloads\\\\esportes-victurino\\\\assets\\\\css\" -Force 2>$null | Measure-Object | ForEach-Object {$_.Count})"
+    ]
+  }
+}
