@@ -1,0 +1,14 @@
+{
+  "name": "esportes-victurino",
+  "version": "1.0.0",
+  "description": "Site profissional de fotografia — Davi Victurino",
+  "scripts": {
+    "update-gallery": "node scripts/generate-gallery.js",
+    "deploy": "node scripts/optimize-images.js && node scripts/generate-gallery.js && git add . && git diff --cached --quiet && echo \"Nenhuma alteracao para publicar.\" || git commit -m \"Atualiza galeria e fotos\" && git push origin main",
+    "deploy:fotos": "git add assets/img && git commit -m \"Adiciona novas fotos\" && git push origin main",
+    "fix": "git rm -r --cached node_modules --ignore-unmatch && git rm -r --cached .wrangler --ignore-unmatch"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
