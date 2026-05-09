@@ -4,6 +4,6 @@
   "description": "Site profissional de fotografia — Davi Victurino",
   "scripts": {
     "update-gallery": "node scripts/generate-gallery.js",
-    "deploy": "node scripts/generate-gallery.js && git add . && git commit -m \"Atualiza galeria\" && git push origin main"
+    "deploy": "node scripts/generate-gallery.js && git add . && git diff --cached --quiet && echo \"Nenhuma alteracao para publicar.\" || git commit -m \"Atualiza galeria\" && git push origin main"
   }
 }
