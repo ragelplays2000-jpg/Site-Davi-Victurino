@@ -19,16 +19,19 @@ const CATEGORIES = [
 const IMG_BASE   = path.join(__dirname, '..', 'assets', 'img');
 const INDEX_PATH = path.join(__dirname, '..', 'index.html');
 
-function scanCategory(cat) {
-  const dir = path.join(IMG_BASE, cat.dir);
+function scanDir(dir) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
-    console.log(`  Criada pasta: assets/img/${cat.dir}/`);
+    console.log(`  Criada pasta: ${path.relative(path.join(__dirname, '..'), dir)}/`);
   }
+  return fs.readdirSync(dir)
+    .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
+    .sort();
+}
 
-  const files = fs.existsSync(dir)
-    ? fs.readdirSync(dir).filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f)).sort()
-    : [];
+function scanCategory(cat) {
+  const dir  = path.join(IMG_BASE, cat.dir);
+  const files = scanDir(dir);
 
   if (files.length > 0) {
     return files.map((file, i) => ({
@@ -39,7 +42,6 @@ function scanCategory(cat) {
     }));
   }
 
-  // Nenhuma foto real: usar placeholders se configurado
   if (cat.placeholders > 0) {
     return Array.from({ length: cat.placeholders }, (_, i) => ({
       src:       `https://picsum.photos/800/600?random=${101 + i}`,
@@ -53,6 +55,7 @@ function scanCategory(cat) {
   return [];
 }
 
+// ── GALERIA PRINCIPAL ──
 const allItems = [];
 const counters = {};
 
@@ -68,17 +71,31 @@ CATEGORIES.forEach(cat => {
 });
 
 const totalReal = Object.values(counters).reduce((a,b)=>a+b,0);
-console.log(`\n  TOTAL real: ${totalReal} foto(s) | Com placeholders: ${allItems.length}\n`);
+console.log(`\n  TOTAL real: ${totalReal} foto(s) | Com placeholders: ${allItems.length}`);
 
-// Gera o bloco GALLERY DATA
-const lines = CATEGORIES.map(cat => {
+// ── DESTAQUES ──
+const destaquesDir   = path.join(IMG_BASE, 'destaques');
+const destaquesFiles = scanDir(destaquesDir);
+const destaquesItems = destaquesFiles.map((file, i) => ({
+  src:  `assets/img/destaques/${file}`,
+  cat:  'destaques',
+  label:'Destaque',
+  tall: i % 2 === 0,
+}));
+const destaquesStatus = destaquesItems.length >= 6
+  ? `${destaquesItems.length} foto(s) — usadas na aba "Todos"`
+  : destaquesItems.length > 0
+    ? `${destaquesItems.length} foto(s) — menos de 6, usando 1 por nicho na aba "Todos"`
+    : `vazia — usando 1 por nicho na aba "Todos"`;
+console.log(`  ${'Destaques'.padEnd(14)} → ${destaquesStatus}\n`);
+
+// ── GERA BLOCO GALLERY DATA ──
+const galleryLines = CATEGORIES.map(cat => {
   const items = allItems.filter(p => p.cat === cat.key);
-  if (items.length === 0) {
-    return `  // ${cat.label} — sem fotos ainda`;
-  }
+  if (items.length === 0) return `  // ${cat.label} — sem fotos ainda`;
   const isPlaceholder = items[0].placeholder;
   const comment = isPlaceholder
-    ? `  // ${cat.label} — placeholders (TODO: substituir por fotos reais em assets/img/${cat.dir}/)`
+    ? `  // ${cat.label} — placeholders (TODO: substituir em assets/img/${cat.dir}/)`
     : `  // ${cat.label} — ${items.length} foto(s)`;
   const entries = items.map(p =>
     `    {src:'${p.src}',cat:'${p.cat}',label:'${p.label}',tall:${p.tall}}`
@@ -87,19 +104,39 @@ const lines = CATEGORIES.map(cat => {
 }).join(',\n');
 
 const newGallery =
-  `// GALLERY DATA START\nconst GALLERY = [\n${lines},\n];\n// GALLERY DATA END`;
+  `// GALLERY DATA START\nconst GALLERY = [\n${galleryLines},\n];\n// GALLERY DATA END`;
 
-// Substitui o bloco no index.html
+// ── GERA BLOCO DESTAQUES ──
+const destaquesLines = destaquesItems.length > 0
+  ? destaquesItems.map(p =>
+      `  {src:'${p.src}',cat:'${p.cat}',label:'${p.label}',tall:${p.tall}}`
+    ).join(',\n')
+  : '  // sem fotos ainda — adicione fotos em assets/img/destaques/';
+
+const newDestaques =
+  `// DESTAQUES START\nconst DESTAQUES = [\n${destaquesLines},\n];\n// DESTAQUES END`;
+
+// ── INJETA NO INDEX.HTML ──
 let html = fs.readFileSync(INDEX_PATH, 'utf8');
-const start = html.indexOf('// GALLERY DATA START');
-const end   = html.indexOf('// GALLERY DATA END') + '// GALLERY DATA END'.length;
 
-if (start === -1 || end === -1) {
-  console.error('❌ Marcadores // GALLERY DATA START/END não encontrados no index.html');
+const gStart = html.indexOf('// GALLERY DATA START');
+const gEnd   = html.indexOf('// GALLERY DATA END') + '// GALLERY DATA END'.length;
+const dStart = html.indexOf('// DESTAQUES START');
+const dEnd   = html.indexOf('// DESTAQUES END') + '// DESTAQUES END'.length;
+
+if (gStart === -1 || gEnd === -1) {
+  console.error('❌ Marcadores GALLERY DATA START/END não encontrados no index.html');
+  process.exit(1);
+}
+if (dStart === -1 || dEnd === -1) {
+  console.error('❌ Marcadores DESTAQUES START/END não encontrados no index.html');
   process.exit(1);
 }
 
-html = html.slice(0, start) + newGallery + html.slice(end);
+// substitui de trás pra frente para não deslocar índices
+html = html.slice(0, dStart) + newDestaques + html.slice(dEnd);
+html = html.slice(0, gStart) + newGallery   + html.slice(gEnd);
+
 fs.writeFileSync(INDEX_PATH, html, 'utf8');
 
 console.log('✅ index.html atualizado com sucesso!');

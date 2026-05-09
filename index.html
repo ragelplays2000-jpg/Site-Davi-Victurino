@@ -895,18 +895,19 @@ const GALLERY = [
     {src:'assets/img/jiu-jitsu/IMG_9434.webp',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
     {src:'assets/img/jiu-jitsu/IMG_9435.webp',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:true},
     {src:'assets/img/jiu-jitsu/IMG_9439.webp',cat:'jiu-jitsu',label:'Jiu-Jitsu',tall:false},
-  // Eventos — 11 foto(s)
+  // Eventos — 12 foto(s)
     {src:'assets/img/eventos/169742aa-c25c-47f9-abc0-047d53d8c388.webp',cat:'eventos',label:'Eventos',tall:true},
-    {src:'assets/img/eventos/IMG_5978.webp',cat:'eventos',label:'Eventos',tall:false},
-    {src:'assets/img/eventos/IMG_6126.webp',cat:'eventos',label:'Eventos',tall:true},
-    {src:'assets/img/eventos/IMG_6127.webp',cat:'eventos',label:'Eventos',tall:false},
-    {src:'assets/img/eventos/IMG_6189.webp',cat:'eventos',label:'Eventos',tall:true},
-    {src:'assets/img/eventos/IMG_6249.webp',cat:'eventos',label:'Eventos',tall:false},
-    {src:'assets/img/eventos/IMG_6327.webp',cat:'eventos',label:'Eventos',tall:true},
-    {src:'assets/img/eventos/IMG_6350.webp',cat:'eventos',label:'Eventos',tall:false},
-    {src:'assets/img/eventos/IMG_6356.webp',cat:'eventos',label:'Eventos',tall:true},
-    {src:'assets/img/eventos/IMG_6514.webp',cat:'eventos',label:'Eventos',tall:false},
-    {src:'assets/img/eventos/IMG_9173.webp',cat:'eventos',label:'Eventos',tall:true},
+    {src:'assets/img/eventos/IMG_1335.JPG.jpeg',cat:'eventos',label:'Eventos',tall:false},
+    {src:'assets/img/eventos/IMG_5978.webp',cat:'eventos',label:'Eventos',tall:true},
+    {src:'assets/img/eventos/IMG_6126.webp',cat:'eventos',label:'Eventos',tall:false},
+    {src:'assets/img/eventos/IMG_6127.webp',cat:'eventos',label:'Eventos',tall:true},
+    {src:'assets/img/eventos/IMG_6189.webp',cat:'eventos',label:'Eventos',tall:false},
+    {src:'assets/img/eventos/IMG_6249.webp',cat:'eventos',label:'Eventos',tall:true},
+    {src:'assets/img/eventos/IMG_6327.webp',cat:'eventos',label:'Eventos',tall:false},
+    {src:'assets/img/eventos/IMG_6350.webp',cat:'eventos',label:'Eventos',tall:true},
+    {src:'assets/img/eventos/IMG_6356.webp',cat:'eventos',label:'Eventos',tall:false},
+    {src:'assets/img/eventos/IMG_6514.webp',cat:'eventos',label:'Eventos',tall:true},
+    {src:'assets/img/eventos/IMG_9173.webp',cat:'eventos',label:'Eventos',tall:false},
   // Ciclismo — 8 foto(s)
     {src:'assets/img/ciclismo/img_5464.webp',cat:'ciclismo',label:'Ciclismo',tall:true},
     {src:'assets/img/ciclismo/img_5583.webp',cat:'ciclismo',label:'Ciclismo',tall:false},
@@ -931,7 +932,7 @@ const GALLERY = [
     {src:'assets/img/premiacao/07a450dc-d014-42c0-aee2-ae3c137942b9.webp',cat:'premiacao',label:'Premiação',tall:true},
     {src:'assets/img/premiacao/184ad999-e0dc-46f2-8acc-2bb1f74b6cb3.webp',cat:'premiacao',label:'Premiação',tall:false},
     {src:'assets/img/premiacao/9fffedb8-25d9-45ad-ac53-60426babf425.webp',cat:'premiacao',label:'Premiação',tall:false},
-    {src:'assets/img/premiacao/IMG_0046.webp',cat:'premiacao',label:'Premiação',tall:true},
+    {src:'assets/img/premiacao/IMG_0046 - Copia.webp',cat:'premiacao',label:'Premiação',tall:true},
     {src:'assets/img/premiacao/IMG_0604.webp',cat:'premiacao',label:'Premiação',tall:false},
     {src:'assets/img/premiacao/IMG_1427.webp',cat:'premiacao',label:'Premiação',tall:false},
     {src:'assets/img/premiacao/IMG_1429.webp',cat:'premiacao',label:'Premiação',tall:true},
@@ -939,6 +940,12 @@ const GALLERY = [
     {src:'assets/img/premiacao/IMG_1432.webp',cat:'premiacao',label:'Premiação',tall:false},
 ];
 // GALLERY DATA END
+
+// DESTAQUES START
+const DESTAQUES = [
+  // sem fotos ainda — adicione fotos em assets/img/destaques/,
+];
+// DESTAQUES END
 
 const TODOS_LIMIT = 1;
 const CATEGORY_LIMIT = 6;
@@ -963,8 +970,9 @@ function initCounters() {
   });
 }
 
-// ── ITENS DO FILTRO "TODOS" (3 por categoria) ──
+// ── ITENS DO FILTRO "TODOS" ──
 function getTodosItems() {
+  if (DESTAQUES.length >= 6) return DESTAQUES;
   const bycat = {};
   GALLERY.forEach(p => { (bycat[p.cat]=bycat[p.cat]||[]).push(p); });
   return Object.values(bycat).flatMap(arr => arr.slice(0, TODOS_LIMIT));
