@@ -9,12 +9,12 @@
 <meta name="author" content="Davi Viturino Pinheiro">
 <meta property="og:title" content="Fotos Victurino - Fotografia Esportiva Bahia">
 <meta property="og:description" content="Capturando a emoção do esporte e eventos em toda Bahia. Mais de 420 jogos fotografados.">
-<meta property="og:image" content="assets/img/davi-perfil.jpg">
+<meta property="og:image" content="assets/img/davi-perfil.webp">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fotos Victurino - Fotografia Esportiva">
 <meta name="twitter:description" content="Fotografia esportiva e de eventos profissional na Bahia">
-<meta name="twitter:image" content="assets/img/davi-perfil.jpg">
+<meta name="twitter:image" content="assets/img/davi-perfil.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -91,7 +91,7 @@ nav ul a:hover::after{width:100%}
 
 /* ── HERO ── */
 #hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;overflow:hidden;background:#111}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;background-image:url('assets/img/davi-perfil.jpg');transform-origin:center;animation:kenBurns 20s ease-in-out infinite alternate;will-change:transform}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;background-image:url('assets/img/davi-perfil.webp');transform-origin:center;animation:kenBurns 20s ease-in-out infinite alternate;will-change:transform}
 @keyframes kenBurns{0%{transform:scale(1)}100%{transform:scale(1.1)}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.5) 0%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.65) 100%)}
 .hero-content{position:relative;z-index:2;width:90%;max-width:900px;margin:0 auto;padding-top:72px;padding-bottom:220px}
@@ -412,7 +412,7 @@ footer{background:#111;padding:60px 0 32px;color:rgba(255,255,255,.6)}
     <div class="sobre-grid">
       <div class="sobre-img-wrap gsap-slide-left">
         <div class="sobre-img-frame">
-          <img src="assets/img/davi-perfil.jpg" alt="Davi Viturino Pinheiro - Fotógrafo Esportivo Bahia" loading="lazy">
+          <img src="assets/img/davi-perfil.webp" alt="Davi Viturino Pinheiro - Fotógrafo Esportivo Bahia" loading="lazy">
         </div>
         <div class="sobre-img-accent" aria-hidden="true"></div>
         <div class="sobre-img-badge">
@@ -1138,7 +1138,8 @@ window.addEventListener('load',()=>{
   ScrollTrigger.create({trigger:'.hero-stats',start:'top 90%',once:true,onEnter:()=>document.querySelectorAll('.count').forEach(countUp)});
   gsap.fromTo('.gsap-slide-left',{x:-60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
   gsap.fromTo('.gsap-slide-right',{x:60,opacity:0},{x:0,opacity:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#sobre',start:'top 80%',once:true}});
-  gsap.from('.gsap-fade-up',{y:40,opacity:0,duration:.8,stagger:.12,ease:'power2.out',scrollTrigger:{trigger:'#pacotes',start:'top 80%',once:true}});
+  ScrollTrigger.create({trigger:'#pacotes',start:'top 85%',once:true,
+    onEnter:()=>gsap.from('.gsap-fade-up',{y:30,duration:.7,stagger:.1,ease:'power2.out'})});
   gsap.from('footer',{opacity:0,y:30,duration:1,ease:'power2.out',scrollTrigger:{trigger:'footer',start:'top 90%'}});
 });
 </script>
